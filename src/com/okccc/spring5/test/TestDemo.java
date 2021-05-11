@@ -1,24 +1,39 @@
 package com.okccc.spring5.test;
 
 import com.okccc.spring5.bean.User;
+import com.okccc.spring5.config.SpringConfig;
+import com.okccc.spring5.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.lang.annotation.Annotation;
+
 /**
- * @author okccc
- * @date 2021/4/27 20:33
- * @desc
+ * author okccc
+ * date 2021/4/27 20:33
+ * desc spring入门
  */
 public class TestDemo {
     @Test
     public void test01() {
-        // 1.加载spring配置文件
+        // 加载Spring配置文件
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        // 2.获取配置中创建的对象
+        // 获取配置中创建的对象
         User user = context.getBean("user", User.class);
-        System.out.println(user);
+        // 调用方法
         user.add();
+    }
+
+    @Test
+    public void test02() {
+        // 加载Spring配置类
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        // 获取对象
+        UserService userService = context.getBean("userService", UserService.class);
+        // 调用方法
+        userService.add();
     }
 
 }
