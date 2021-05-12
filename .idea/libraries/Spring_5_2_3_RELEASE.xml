@@ -19,11 +19,18 @@
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-tx-5.2.3.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-test-5.2.3.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.springsource.net.sf.cglib-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/druid-1.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.7-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.ideaLibSources/spring-context-5.2.3.RELEASE-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ideaLibSources/spring-beans-5.2.3.RELEASE-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-core-5.2.3.RELEASE-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/commons-logging-1.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
