@@ -18,30 +18,30 @@ public class TestDemo {
     public void testIoc() {
         // 加载Spring配置文件
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        // 获取配置中创建的对象
+        // 获取bean对象
         User user = context.getBean("user", User.class);
         // 调用方法
-        user.add();
+        user.test();
     }
 
     @Test
     public void testAnnotation() {
         // 加载Spring配置类
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        // 获取对象
+        // 获取bean对象
         UserService userService = context.getBean("userService", UserService.class);
         // 调用方法
-        userService.add();
+        userService.test();
     }
 
     @Test
     public void testAop() {
         // 加载Spring配置类
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        // 获取对象
+        // 获取bean对象
         User user = context.getBean("user", User.class);
         // 调用方法
-        user.add();
+        user.test();
     }
 
 }

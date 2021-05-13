@@ -6,5 +6,5 @@ package com.okccc.spring5.dao;
  * Desc:
  */
 public interface UserDao {
-    void add();
+    void test();
 }

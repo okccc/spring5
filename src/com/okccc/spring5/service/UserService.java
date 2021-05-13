@@ -2,8 +2,6 @@ package com.okccc.spring5.service;
 
 import com.okccc.spring5.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,8 +16,8 @@ public class UserService {
 //    @Qualifier(value = "userDaoImpl")  // 根据名称注入
     private UserDao userDao;
 
-    public void add() {
-        System.out.println("service add...");
-        userDao.add();
+    public void test() {
+        System.out.println("service test...");
+        userDao.test();
     }
 }

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class PersonProxy {
 
-    @Before(value = "execution(* com.okccc.spring5.bean.User.add())")
+    @Before(value = "execution(* com.okccc.spring5.bean.User.test())")
     public void before() {
         System.out.println("person before...");
     }

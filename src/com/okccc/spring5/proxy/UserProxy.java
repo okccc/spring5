@@ -17,12 +17,12 @@ import org.springframework.stereotype.Component;
 public class UserProxy {
 
     // 将相同切入点抽取出来
-    @Pointcut(value = "execution(* com.okccc.spring5.bean.User.add())")
+    @Pointcut(value = "execution(* com.okccc.spring5.bean.User.test())")
     public void pointCut() {
     }
 
     // 前置通知
-    @Before(value = "execution(* com.okccc.spring5.bean.User.add())")
+    @Before(value = "execution(* com.okccc.spring5.bean.User.test())")
     public void before() {
         System.out.println("before...");
     }

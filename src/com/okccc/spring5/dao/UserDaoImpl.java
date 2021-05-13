@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDaoImpl implements UserDao{
     @Override
-    public void add() {
-        System.out.println("dao add...");
+    public void test() {
+        System.out.println("dao test...");
     }
 }
