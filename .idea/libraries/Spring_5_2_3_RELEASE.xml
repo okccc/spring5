@@ -33,6 +33,7 @@
       <root url="jar://$USER_HOME$/.ideaLibSources/spring-beans-5.2.3.RELEASE-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ideaLibSources/spring-jdbc-5.2.3.RELEASE-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ideaLibSources/druid-1.1.9-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-tx-5.2.3.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

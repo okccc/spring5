@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Author: okccc
  * Date: 2021/5/11 下午3:19
- * Desc:
+ * Desc: 数据交互层
  */
 public interface UserDao {
     void test();
@@ -21,4 +21,8 @@ public interface UserDao {
     Object query();
 
     void batchUpdate(List<Object[]> batchArgs);
+
+    void reduceMoney();
+
+    void addMoney();
 }

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -39,5 +40,14 @@ public class Config {
         // 注入dataSource,到ioc容器中根据类型找到dataSource
         jdbcTemplate.setDataSource(dataSource);
         return jdbcTemplate;
+    }
+
+    @Bean
+    public DataSourceTransactionManager getDataSourceTransactionManager(DataSource dataSource) {
+        // 创建事务管理器
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+        // 注入dataSource
+        transactionManager.setDataSource(dataSource);
+        return transactionManager;
     }
 }

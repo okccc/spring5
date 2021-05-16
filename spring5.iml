@@ -7,6 +7,7 @@
           <file>file://$MODULE_DIR$/src/com/okccc/spring5/bean.xml</file>
           <file>file://$MODULE_DIR$/src/bean.xml</file>
           <file>file://$MODULE_DIR$/src/com/okccc/spring5/config/SpringConfig.java</file>
+          <file>file://$MODULE_DIR$/src/com/okccc/spring5/config/Config.java</file>
         </fileset>
       </configuration>
     </facet>

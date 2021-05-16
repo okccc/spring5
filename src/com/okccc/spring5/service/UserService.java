@@ -4,15 +4,19 @@ import com.okccc.spring5.bean.User;
 import com.okccc.spring5.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Author: okccc
  * Date: 2021/5/11 上午11:24
- * Desc: 
+ * Desc: 业务逻辑层
  */
 @Service  // (userService=UserService)可以省略,默认是将类名称首字母小写
+@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)  // 在类或方法上面添加事务注解
 public class UserService {
 
     @Autowired  // 根据类型注入
@@ -47,5 +51,13 @@ public class UserService {
     // 批量更新
     public void batchUpdate(List<Object[]> batchArgs) {
         userDao.batchUpdate(batchArgs);
+    }
+
+    // 演示转账
+    public void account() {
+        userDao.reduceMoney();
+        // 模拟异常
+        int i = 1/0;
+        userDao.addMoney();
     }
 }

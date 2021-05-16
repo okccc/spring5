@@ -41,8 +41,16 @@ public class SpringDemo {
      * 切面: 把通知应用到切入点的过程
      *
      * JdbcTemplate: Spring将jdbc进行封装,方便对数据库做crud操作
+     * Config配置类创建数据源 - UserService - UserDao - UserDaoImpl - JdbcTemplate
      *
-     *
+     * 事务: 就是对表的更新操作(insert/delete/update),使数据从一种状态变换到另一种状态,有acid四大特性,通常放在javaee三层架构的Service层
+     * Spring主要使用声明式事务管理: 1.基于xml配置文件  2.基于注解(推荐)
+     * Config配置类创建事务管理器 - UserService添加事务注解 - UserDao - UserDaoImpl - JdbcTemplate
+     * propagation：传播行为,默认REQUIRED
+     * isolation：隔离级别,默认REPEATABLE_READ
+     * timeout：超时时间,默认-1,事务要在一定时间内提交,不然会回滚
+     * readOnly：默认false可以增删改,true表示只能查询
+     * (no)rollbackFor：设置出现哪些异常进行/不进行事务回滚
      *
      */
 
@@ -99,6 +107,16 @@ public class SpringDemo {
         List<Object[]> batchArgs = new ArrayList<>();
         batchArgs.add(o4);
         userService.batchUpdate(batchArgs);
+    }
+
+    @Test
+    public void testTX() {
+        // 加载Spring配置类
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        // 获取bean对象
+        UserService userService = context.getBean("userService", UserService.class);
+        // 调用方法
+        userService.account();
     }
 
 }

@@ -70,4 +70,16 @@ public class UserDaoImpl implements UserDao{
         String sql03 = "delete from t_user where id>?";
         jdbcTemplate.batchUpdate(sql03, batchArgs);
     }
+
+    @Override
+    public void reduceMoney() {
+        String sql = "update t_account set money=money-? where name=?";
+        jdbcTemplate.update(sql,1000, "tom");
+    }
+
+    @Override
+    public void addMoney() {
+        String sql = "update t_account set money=money+? where name=?";
+        jdbcTemplate.update(sql,1000, "lucy");
+    }
 }
