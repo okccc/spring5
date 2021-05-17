@@ -4,6 +4,8 @@ import com.okccc.spring5.bean.User;
 import com.okccc.spring5.config.Config;
 import com.okccc.spring5.service.UserService;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -52,6 +54,9 @@ public class SpringDemo {
      * readOnly：默认false可以增删改,true表示只能查询
      * (no)rollbackFor：设置出现哪些异常进行/不进行事务回滚
      *
+     * Spring5新功能: 框架基于java8,自带通用的日志封装Log4j2
+     *
+     *
      */
 
     @Test
@@ -98,7 +103,7 @@ public class SpringDemo {
 //        userService.add(user);
 //        userService.update(user);
 //        userService.delete(1);
-//        System.out.println(userService.query());
+        System.out.println(userService.query());
         // 批量操作
         Object[] o1 = {3, "aaa", 19};
         Object[] o2 = {4, "bbb", 21};
@@ -117,6 +122,12 @@ public class SpringDemo {
         UserService userService = context.getBean("userService", UserService.class);
         // 调用方法
         userService.account();
+    }
+
+    @Test
+    public void testLog4j2() {
+        final Logger logger = LoggerFactory.getLogger(SpringDemo.class);
+        logger.info("hello log4j2");
     }
 
 }
