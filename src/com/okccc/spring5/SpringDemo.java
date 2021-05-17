@@ -54,9 +54,10 @@ public class SpringDemo {
      * readOnly：默认false可以增删改,true表示只能查询
      * (no)rollbackFor：设置出现哪些异常进行/不进行事务回滚
      *
-     * Spring5新功能: 框架基于java8,自带通用的日志封装Log4j2
-     *
-     *
+     * Spring5新功能
+     * 框架基于java8兼容java9,许多不建议使用的类和方法在代码库中删除
+     * 移除Log4jConfigListener,自带通用的日志封装Log4j2
+     * 支持@Nullable注解,可以作用于方法/属性/参数,表示可以为空
      */
 
     @Test
